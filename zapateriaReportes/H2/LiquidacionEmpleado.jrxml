@@ -1,0 +1,345 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.4.3.final using JasperReports Library version 6.4.3  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="LiquidacionEmpleado" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="cb4676e3-c107-430b-ba29-a25cd7847695">
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="zapateriaReportes\H2\Zapateria.xml"/>
+	<property name="com.jaspersoft.studio.unit." value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.pageHeight" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.pageWidth" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.topMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.bottomMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.leftMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.rightMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.columnWidth" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.columnSpacing" value="pixel"/>
+	<style name="Table_TH" mode="Opaque" backcolor="#F0F8FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="Table_CH" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="Table_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<subDataset name="Liquidaciones" uuid="776bc9e7-57ac-4414-ad83-67e171888321">
+		<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+		<property name="com.jaspersoft.studio.data.defaultdataadapter" value="zapateriaReportes\H2\Zapateria.xml"/>
+		<parameter name="ID" class="java.lang.String"/>
+		<queryString language="SQL">
+			<![CDATA[SELECT FECHA_SALIDA,HORAS_TRABAJADAS,DIAS_TRABAJADOS,
+FECHA_INGRESO,SUELDO_BASICO,CESANTIAS,INTERESES_CESANTIAS,
+PRIMA_SERVICIO,VACACIONES,VALOR_LIQUIDACION,BONIFICACION
+ FROM ZAPATERIA.LIQUIDACION WHERE ID IN ($P!{ID})]]>
+		</queryString>
+		<field name="FECHA_SALIDA" class="java.sql.Date">
+			<property name="com.jaspersoft.studio.field.label" value="FECHA_SALIDA"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="LIQUIDACION"/>
+		</field>
+		<field name="HORAS_TRABAJADAS" class="java.lang.Long">
+			<property name="com.jaspersoft.studio.field.label" value="HORAS_TRABAJADAS"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="LIQUIDACION"/>
+		</field>
+		<field name="DIAS_TRABAJADOS" class="java.lang.Long">
+			<property name="com.jaspersoft.studio.field.label" value="DIAS_TRABAJADOS"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="LIQUIDACION"/>
+		</field>
+		<field name="FECHA_INGRESO" class="java.sql.Date">
+			<property name="com.jaspersoft.studio.field.label" value="FECHA_INGRESO"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="LIQUIDACION"/>
+		</field>
+		<field name="SUELDO_BASICO" class="java.math.BigDecimal">
+			<property name="com.jaspersoft.studio.field.label" value="SUELDO_BASICO"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="LIQUIDACION"/>
+		</field>
+		<field name="CESANTIAS" class="java.math.BigDecimal">
+			<property name="com.jaspersoft.studio.field.label" value="CESANTIAS"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="LIQUIDACION"/>
+		</field>
+		<field name="INTERESES_CESANTIAS" class="java.math.BigDecimal">
+			<property name="com.jaspersoft.studio.field.label" value="INTERESES_CESANTIAS"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="LIQUIDACION"/>
+		</field>
+		<field name="PRIMA_SERVICIO" class="java.math.BigDecimal">
+			<property name="com.jaspersoft.studio.field.label" value="PRIMA_SERVICIO"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="LIQUIDACION"/>
+		</field>
+		<field name="VACACIONES" class="java.math.BigDecimal">
+			<property name="com.jaspersoft.studio.field.label" value="VACACIONES"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="LIQUIDACION"/>
+		</field>
+		<field name="VALOR_LIQUIDACION" class="java.math.BigDecimal">
+			<property name="com.jaspersoft.studio.field.label" value="VALOR_LIQUIDACION"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="LIQUIDACION"/>
+		</field>
+		<field name="BONIFICACION" class="java.math.BigDecimal">
+			<property name="com.jaspersoft.studio.field.label" value="BONIFICACION"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="LIQUIDACION"/>
+		</field>
+	</subDataset>
+	<parameter name="ID" class="java.lang.String"/>
+	<parameter name="imagen" class="java.lang.String"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT U.ID,U.NOMBRES,U.DOCUMENTO FROM ZAPATERIA.LIQUIDACION L, ZAPATERIA.USUARIOS U
+ WHERE U.ID=L.ID_USUARIO AND L.ID IN ($P!{ID})   GROUP BY (U.ID)]]>
+	</queryString>
+	<field name="ID" class="java.lang.Long">
+		<property name="com.jaspersoft.studio.field.label" value="ID"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="USUARIOS"/>
+	</field>
+	<field name="NOMBRES" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="NOMBRES"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="USUARIOS"/>
+	</field>
+	<field name="DOCUMENTO" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="DOCUMENTO"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="USUARIOS"/>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<pageHeader>
+		<band height="375" splitType="Stretch">
+			<staticText>
+				<reportElement x="250" y="0" width="331" height="71" uuid="fd5e80a8-e8e2-46cb-b58d-2ab016d79e54"/>
+				<textElement>
+					<font size="50"/>
+				</textElement>
+				<text><![CDATA[LIQUIDACION]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="81" y="89" width="290" height="21" uuid="7b4eeea6-9fc0-4bcc-abec-5d241d1bc809"/>
+				<textFieldExpression><![CDATA[$F{NOMBRES}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="90" width="81" height="21" uuid="a63a575d-3661-4f3c-8f9b-535cc4eae9bc"/>
+				<text><![CDATA[NOMBRE]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="110" width="81" height="21" uuid="7afe818f-dce3-4a5c-a764-b3e070d3f88e"/>
+				<text><![CDATA[DOCUMENTO]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="79" y="110" width="301" height="21" uuid="9d8aaa90-9374-42ca-8046-bf886c00e0c9"/>
+				<textFieldExpression><![CDATA[$F{DOCUMENTO}]]></textFieldExpression>
+			</textField>
+			<componentElement>
+				<reportElement x="-19" y="146" width="840" height="121" uuid="a1d7f8c7-f8a8-4141-9d8f-c77561952956">
+					<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.VerticalRowLayout"/>
+					<property name="com.jaspersoft.studio.table.style.table_header" value="Table_TH"/>
+					<property name="com.jaspersoft.studio.table.style.column_header" value="Table_CH"/>
+					<property name="com.jaspersoft.studio.table.style.detail" value="Table_TD"/>
+				</reportElement>
+				<jr:table xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd">
+					<datasetRun subDataset="Liquidaciones" uuid="512a8a05-8085-47bb-b1e2-2c5e30e4b0a8">
+						<datasetParameter name="ID">
+							<datasetParameterExpression><![CDATA[$P{ID}]]></datasetParameterExpression>
+						</datasetParameter>
+						<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+					</datasetRun>
+					<jr:column width="53" uuid="e15c549b-0ce6-4282-a435-5a5982de74e3">
+						<jr:tableHeader style="Table_TH" height="30"/>
+						<jr:tableFooter style="Table_TH" height="30"/>
+						<jr:columnHeader style="Table_CH" height="30">
+							<staticText>
+								<reportElement x="0" y="0" width="53" height="30" uuid="b2dd7037-414a-4a41-ba42-f35c5d0927f3"/>
+								<text><![CDATA[Fecha Ingreso]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell style="Table_TD" height="30">
+							<textField>
+								<reportElement x="0" y="0" width="53" height="30" uuid="4b166d2c-8873-41ae-89fe-8e2448f9f21f"/>
+								<textFieldExpression><![CDATA[$F{FECHA_INGRESO}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="53" uuid="863c36ce-242d-406c-b091-d519a3d91925">
+						<jr:tableHeader style="Table_TH" height="30"/>
+						<jr:tableFooter style="Table_TH" height="30"/>
+						<jr:columnHeader style="Table_CH" height="30">
+							<staticText>
+								<reportElement x="0" y="0" width="53" height="30" uuid="f741028e-f68b-49fd-ac65-1ac3ad976204"/>
+								<text><![CDATA[Fecha de salida]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell style="Table_TD" height="30">
+							<textField>
+								<reportElement x="0" y="0" width="53" height="30" uuid="a737818d-8620-4d83-bcaf-6487601f3008"/>
+								<textFieldExpression><![CDATA[$F{FECHA_SALIDA}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="53" uuid="66cc2e96-e093-46ee-9f2f-cd6f5d60ec1c">
+						<jr:tableHeader style="Table_TH" height="30"/>
+						<jr:tableFooter style="Table_TH" height="30"/>
+						<jr:columnHeader style="Table_CH" height="30">
+							<staticText>
+								<reportElement x="0" y="0" width="53" height="30" uuid="1393462f-be4a-458f-b5c1-8417a0303ccb"/>
+								<text><![CDATA[Dias trabajados]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell style="Table_TD" height="30">
+							<textField>
+								<reportElement x="0" y="0" width="53" height="30" uuid="a64fbfa7-da06-40a2-b09b-4ced96013dbf"/>
+								<textFieldExpression><![CDATA[$F{DIAS_TRABAJADOS}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="53" uuid="1759594b-48c4-4a35-9c8b-6f69ad2189bf">
+						<jr:tableHeader style="Table_TH" height="30"/>
+						<jr:tableFooter style="Table_TH" height="30"/>
+						<jr:columnHeader style="Table_CH" height="30">
+							<staticText>
+								<reportElement x="0" y="0" width="53" height="30" uuid="56a301c3-d8be-42b8-85e0-b4f92fe3cb91"/>
+								<text><![CDATA[Horas trabajadas]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell style="Table_TD" height="30">
+							<textField>
+								<reportElement x="0" y="0" width="53" height="30" uuid="aaa37f30-2f85-4b37-abe6-605cef41a5c4"/>
+								<textFieldExpression><![CDATA[$F{HORAS_TRABAJADAS}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="53" uuid="20bb4e8a-70e9-4ec9-adb0-fafbb1245b09">
+						<jr:tableHeader style="Table_TH" height="30"/>
+						<jr:tableFooter style="Table_TH" height="30"/>
+						<jr:columnHeader style="Table_CH" height="30">
+							<staticText>
+								<reportElement x="0" y="0" width="53" height="30" uuid="1094ef1c-4843-49ff-9e63-b0660bab672a"/>
+								<text><![CDATA[Sueldo basico]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell style="Table_TD" height="30">
+							<textField>
+								<reportElement x="0" y="0" width="53" height="30" uuid="216157a1-c984-4c3e-a853-3b6a7c390229"/>
+								<textFieldExpression><![CDATA[new DecimalFormat("##,###.###").format($F{SUELDO_BASICO}.doubleValue()).toString()]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="53" uuid="5d081a07-2d5f-424f-bf3f-799aa9f02cea">
+						<jr:tableHeader style="Table_TH" height="30"/>
+						<jr:tableFooter style="Table_TH" height="30"/>
+						<jr:columnHeader style="Table_CH" height="30">
+							<staticText>
+								<reportElement x="0" y="0" width="53" height="30" uuid="cc0890b8-1463-43f8-b496-68dff5629d04"/>
+								<text><![CDATA[Cesantias]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell style="Table_TD" height="30">
+							<textField>
+								<reportElement x="0" y="0" width="53" height="30" uuid="d0930b69-ce50-49d7-9d99-770caa6b38a7"/>
+								<textFieldExpression><![CDATA[new DecimalFormat("##,###.###").format($F{CESANTIAS}.doubleValue()).toString()]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="70" uuid="6c74db5b-fadd-4bd4-8674-f1fa65c38c3f">
+						<jr:tableHeader style="Table_TH" height="30"/>
+						<jr:tableFooter style="Table_TH" height="30"/>
+						<jr:columnHeader style="Table_CH" height="30">
+							<staticText>
+								<reportElement x="0" y="0" width="70" height="30" uuid="628fe6f4-a451-4c9b-abd9-a751a7009ad5"/>
+								<text><![CDATA[Intereses de cesantias]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell style="Table_TD" height="30">
+							<textField>
+								<reportElement x="0" y="0" width="70" height="30" uuid="523f6b1d-2700-471d-a46f-ccebcc368910"/>
+								<textFieldExpression><![CDATA[new DecimalFormat("##,###.###").format($F{INTERESES_CESANTIAS}.doubleValue()).toString()]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="53" uuid="9595b41e-674d-40b5-bc6e-cfdee36f5941">
+						<jr:tableHeader style="Table_TH" height="30"/>
+						<jr:tableFooter style="Table_TH" height="30"/>
+						<jr:columnHeader style="Table_CH" height="30">
+							<staticText>
+								<reportElement x="0" y="0" width="53" height="30" uuid="a37f138d-b012-4067-bea8-5155e77051db"/>
+								<text><![CDATA[Prima de servicio]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell style="Table_TD" height="30">
+							<textField>
+								<reportElement x="0" y="0" width="53" height="30" uuid="5f3b6310-742b-4929-9280-2fbbbf6f1646"/>
+								<textFieldExpression><![CDATA[new DecimalFormat("##,###.###").format($F{PRIMA_SERVICIO}.doubleValue()).toString()]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="53" uuid="ae4ace34-922c-4621-9f84-4b07602364ff">
+						<jr:tableHeader style="Table_TH" height="30"/>
+						<jr:tableFooter style="Table_TH" height="30"/>
+						<jr:columnHeader style="Table_CH" height="30">
+							<staticText>
+								<reportElement x="0" y="0" width="53" height="30" uuid="48c0b646-fc7e-488d-a3e5-c083ff23b1f3"/>
+								<text><![CDATA[Vacaciones]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell style="Table_TD" height="30">
+							<textField>
+								<reportElement x="0" y="0" width="53" height="30" uuid="898d1017-8a44-42f2-b131-88cd1f8cf473"/>
+								<textFieldExpression><![CDATA[new DecimalFormat("##,###.###").format($F{VACACIONES}.doubleValue()).toString()]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="53" uuid="4db0fc79-3f95-4b95-b634-8952221245cb">
+						<jr:tableHeader style="Table_TH" height="30"/>
+						<jr:tableFooter style="Table_TH" height="30"/>
+						<jr:columnHeader style="Table_CH" height="30">
+							<staticText>
+								<reportElement x="0" y="0" width="53" height="30" uuid="e92c1298-44e6-4b4d-b756-1412ec20de3a"/>
+								<text><![CDATA[Bonificacion]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell style="Table_TD" height="30">
+							<textField>
+								<reportElement x="0" y="0" width="53" height="30" uuid="750728a0-4148-4254-bc38-f6b4e65017e2"/>
+								<textFieldExpression><![CDATA[new DecimalFormat("##,###.###").format($F{BONIFICACION}.doubleValue()).toString()]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="53" uuid="d079c4a2-bd45-49cb-84d3-5d8d43ac6b87">
+						<jr:tableHeader style="Table_TH" height="30"/>
+						<jr:tableFooter style="Table_TH" height="30"/>
+						<jr:columnHeader style="Table_CH" height="30">
+							<staticText>
+								<reportElement x="0" y="0" width="53" height="30" uuid="be557453-bd7e-4677-94e3-1a5212a2d203"/>
+								<text><![CDATA[Valor liquidacion]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell style="Table_TD" height="30">
+							<textField>
+								<reportElement x="0" y="0" width="53" height="30" uuid="a05d0d58-e6a8-4933-b472-8892c1ac5214"/>
+								<textFieldExpression><![CDATA[new DecimalFormat("##,###.###").format($F{VALOR_LIQUIDACION}.doubleValue()).toString()]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+				</jr:table>
+			</componentElement>
+			<staticText>
+				<reportElement x="240" y="360" width="90" height="15" forecolor="#B0AEAE" uuid="0b3fb651-8f6e-4192-be2b-a6acc8dbf710"/>
+				<text><![CDATA[SoftwareDelNorte]]></text>
+			</staticText>
+			<image scaleImage="FillFrame" hAlign="Center" vAlign="Middle" onErrorType="Blank">
+				<reportElement x="10" y="-20" width="194" height="100" uuid="65ea44f7-ff41-4ae8-aefd-6293033c5fb5"/>
+				<imageExpression><![CDATA[$P{imagen}]]></imageExpression>
+			</image>
+		</band>
+	</pageHeader>
+</jasperReport>

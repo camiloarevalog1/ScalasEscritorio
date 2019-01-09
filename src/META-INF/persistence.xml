@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="2.1" xmlns="http://xmlns.jcp.org/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
+  <persistence-unit name="jdbc:h2:\D:\NetBeansProjects8.2\Zapateria\db\zapateria" transaction-type="RESOURCE_LOCAL">
+    <provider>org.hibernate.ejb.HibernatePersistence</provider>
+    <class>com.zapateria.view.Usuarios</class>
+    <class>com.zapateria.dto.InventarioDAO</class>
+    <class>com.zapateria.dto.Compras</class>
+    <class>com.zapateria.dto.Proveedores</class>
+    <class>com.zapateria.dto.Materiales</class>
+    <class>com.zapateria.dto.Secciones</class>
+    <class>com.zapateria.dto.Diego</class>
+    <class>com.zapateria.dto.Cierres</class>
+    <class>com.zapateria.dto.AntNominas</class>
+    <class>com.zapateria.dto.Auxiliares</class>
+    <class>com.zapateria.dto.Permisos</class>
+    <class>com.zapateria.dto.Roles</class>
+    <class>com.zapateria.dto.Bodegas</class>
+    <class>com.zapateria.dto.Prestamos</class>
+    <class>com.zapateria.dto.Clientes</class>
+    <class>com.zapateria.dto.Parametros</class>
+    <class>com.zapateria.dto.Pagos</class>
+    <class>com.zapateria.dto.Cuentas</class>
+    <class>com.zapateria.dto.Usuarios</class>
+    <class>com.zapateria.dto.Nominas</class>
+    <class>com.zapateria.dto.ClienteFacturas</class>
+    <class>com.zapateria.dto.Vistas</class>
+    <class>com.zapateria.dto.NewEntity</class>
+    <properties>
+      <property name="javax.persistence.jdbc.url" value="jdbc:h2:\D:\NetBeansProjects8.2\Zapateria\db\zapateria"/>
+      <property name="javax.persistence.jdbc.user" value="root"/>
+      <property name="javax.persistence.jdbc.driver" value="org.h2.Driver"/>
+      <property name="javax.persistence.jdbc.password" value="12345"/>
+    </properties>
+  </persistence-unit>
+</persistence>

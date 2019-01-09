@@ -1,0 +1,372 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.4.3.final using JasperReports Library version 6.4.3  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Liquidacion_sub" pageWidth="595" pageHeight="842" columnWidth="595" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="ab4b6c17-0c38-4def-93b4-ea6e0e6b5224">
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.data.sql.SQLQueryDesigner.sash.w1" value="149"/>
+	<property name="com.jaspersoft.studio.data.sql.SQLQueryDesigner.sash.w2" value="844"/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="H2\Zapateria.xml"/>
+	<parameter name="IDS" class="java.lang.Long"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT L.ID,L.FECHA_SALIDA,L.DIAS_TRABAJADOS,L.FECHA_INGRESO,L.SUELDO_BASICO,L.CESANTIAS,L.INTERESES_CESANTIAS,L.PRIMA_SERVICIO
+                   ,L.VACACIONES,L.VALOR_LIQUIDACION,L.BONIFICACION,U.NOMBRES,U.APELLIDOS,U.DOCUMENTO
+                    FROM   ZAPATERIA.LIQUIDACION L, ZAPATERIA.USUARIOS U
+                     WHERE L.ID_USUARIO=U.ID AND L.ID=$P{IDS}]]>
+	</queryString>
+	<field name="ID" class="java.lang.Long">
+		<property name="com.jaspersoft.studio.field.label" value="ID"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="LIQUIDACION"/>
+	</field>
+	<field name="FECHA_SALIDA" class="java.sql.Date">
+		<property name="com.jaspersoft.studio.field.label" value="FECHA_SALIDA"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="LIQUIDACION"/>
+	</field>
+	<field name="DIAS_TRABAJADOS" class="java.lang.Long">
+		<property name="com.jaspersoft.studio.field.label" value="DIAS_TRABAJADOS"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="LIQUIDACION"/>
+	</field>
+	<field name="FECHA_INGRESO" class="java.sql.Date">
+		<property name="com.jaspersoft.studio.field.label" value="FECHA_INGRESO"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="LIQUIDACION"/>
+	</field>
+	<field name="SUELDO_BASICO" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.label" value="SUELDO_BASICO"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="LIQUIDACION"/>
+	</field>
+	<field name="CESANTIAS" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.label" value="CESANTIAS"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="LIQUIDACION"/>
+	</field>
+	<field name="INTERESES_CESANTIAS" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.label" value="INTERESES_CESANTIAS"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="LIQUIDACION"/>
+	</field>
+	<field name="PRIMA_SERVICIO" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.label" value="PRIMA_SERVICIO"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="LIQUIDACION"/>
+	</field>
+	<field name="VACACIONES" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.label" value="VACACIONES"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="LIQUIDACION"/>
+	</field>
+	<field name="VALOR_LIQUIDACION" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.label" value="VALOR_LIQUIDACION"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="LIQUIDACION"/>
+	</field>
+	<field name="BONIFICACION" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.label" value="BONIFICACION"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="LIQUIDACION"/>
+	</field>
+	<field name="NOMBRES" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="NOMBRES"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="USUARIOS"/>
+	</field>
+	<field name="APELLIDOS" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="APELLIDOS"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="USUARIOS"/>
+	</field>
+	<field name="DOCUMENTO" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="DOCUMENTO"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="USUARIOS"/>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<detail>
+		<band height="586" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="30" width="111" height="21" uuid="436c82ca-0b43-4c41-b729-6999c335a974"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Nombre Del Empleado]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="140" y="30" width="210" height="20" uuid="0684e6ce-208c-4675-b686-995b9545e84b"/>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textFieldExpression><![CDATA[$F{NOMBRES} + "   " +  $F{APELLIDOS}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="380" y="50" width="111" height="20" uuid="fe625e9f-b748-43da-98e3-50cffc68e5d0"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[IDENTIFICACION]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="380" y="36" width="111" height="15" uuid="3033e1e7-d0d8-4dbb-ad1d-36b073b81536"/>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textFieldExpression><![CDATA[$F{DOCUMENTO}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="83" y="93" width="79" height="19" uuid="3ff1dfe5-ea0f-497e-b0eb-44a97c8005a8"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Total del tiempo]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="1" y="113" width="78" height="19" uuid="4ebb7eb4-7c58-4f08-938f-c5df2bf39f45"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Fecha de Retiro]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="1" y="133" width="88" height="19" uuid="5b5c5a4d-5017-48a4-85ba-31f3963d7f01"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Fecha de Ingreso]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="89" y="115" width="83" height="18" uuid="ec1838da-d215-4ea5-b129-c582f8ffbfd5"/>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textFieldExpression><![CDATA[new SimpleDateFormat("yyyy/MM/dd").format($F{FECHA_SALIDA}.getTime())]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="89" y="133" width="83" height="18" uuid="30bffa83-c2f7-4973-b396-7d3a065dd2d8"/>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textFieldExpression><![CDATA[new SimpleDateFormat("yyyy/MM/dd").format($F{FECHA_INGRESO}.getTime())]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="1" y="152" width="79" height="19" uuid="8f92f456-86a4-4800-9c47-9b8e67e06442"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[DiasTrabajados]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="89" y="151" width="83" height="18" uuid="06bc9500-9e26-4b33-b90a-c7a5af4a2117"/>
+				<textFieldExpression><![CDATA[$F{DIAS_TRABAJADOS}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="1" y="186" width="129" height="19" uuid="6c2a34ea-8222-4034-b1e5-f5e9332ba797"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Salario Base Liquidacion]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="1" y="205" width="81" height="18" uuid="6b6aeba6-0b1c-468b-bf8c-159c1679f084"/>
+				<textFieldExpression><![CDATA[$F{SUELDO_BASICO}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="272" width="129" height="19" uuid="fc52c9a4-7a48-4c25-b01e-a15e34f4a8c0"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[CESANTIAS]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="189" y="272" width="140" height="19" uuid="e3736a31-8bd6-435b-9aa1-5f62e31eec56"/>
+				<text><![CDATA[_____________________________]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="190" y="272" width="67" height="19" uuid="c67e6e59-e708-491a-8671-0a9c6ea9030d"/>
+				<textElement textAlignment="Center" verticalAlignment="Top"/>
+				<textFieldExpression><![CDATA[new DecimalFormat("##,###.###").format($F{SUELDO_BASICO}.doubleValue()).toString()]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="254" y="271" width="20" height="20" uuid="41572765-a368-451c-8f7b-58601926b18b"/>
+				<textElement textAlignment="Center" verticalAlignment="Justified"/>
+				<text><![CDATA[X]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="259" y="272" width="83" height="18" uuid="04a0f614-6252-4d32-a3e3-ae9fbeff6901"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{DIAS_TRABAJADOS}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="255" y="283" width="20" height="20" uuid="b67e6d2b-c8af-48f4-bd81-cf91f6708f2a"/>
+				<textElement textAlignment="Center" verticalAlignment="Justified"/>
+				<text><![CDATA[360]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="329" y="273" width="20" height="20" uuid="f3003c7e-da16-48f1-aa77-065510698cf2"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[=]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="345" y="274" width="81" height="18" uuid="f72aa8ae-05e5-43cc-89a6-3c3da1078db5"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[new DecimalFormat("##,###.###").format($F{CESANTIAS}.doubleValue()).toString()]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="328" width="179" height="19" uuid="21dbcacb-7161-44bc-a029-33afe92a88a4"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[INTERESES SOBRE CESANTIAS]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="188" y="329" width="140" height="19" uuid="de98d717-aadf-470d-90ce-9f8904db233f"/>
+				<text><![CDATA[_____________________________]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="165" y="329" width="67" height="19" uuid="c8806d1e-2c09-421e-8e04-061ad7ae39f3"/>
+				<textElement textAlignment="Center" verticalAlignment="Top"/>
+				<textFieldExpression><![CDATA[new DecimalFormat("##,###.###").format($F{CESANTIAS}.doubleValue()).toString()]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="253" y="328" width="20" height="20" uuid="07873729-ef24-45d8-9252-b0ec9d89fd7f"/>
+				<textElement textAlignment="Center" verticalAlignment="Justified"/>
+				<text><![CDATA[X]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="258" y="329" width="83" height="18" uuid="95643b34-0c22-43b7-a510-3f0113fd3fb6"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{DIAS_TRABAJADOS}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="254" y="340" width="20" height="20" uuid="9f701eb6-8455-4053-b148-e7359956d029"/>
+				<textElement textAlignment="Center" verticalAlignment="Justified"/>
+				<text><![CDATA[360]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="328" y="330" width="20" height="20" uuid="994d0753-cfc5-417a-8756-68afbe8eb2c8"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[=]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="344" y="331" width="81" height="18" uuid="d7a6b012-bf6c-431c-b195-0469f96323fb"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[new DecimalFormat("##,###.###").format($F{INTERESES_CESANTIAS}.doubleValue()).toString()]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="230" y="329" width="30" height="20" uuid="04f5522a-d4b5-467e-9663-bb04253d5082"/>
+				<textElement textAlignment="Center" verticalAlignment="Justified"/>
+				<text><![CDATA[X 12%]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="379" width="129" height="19" uuid="585b4e79-eeda-485a-9ca2-61fe2bce3b32"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[PRIMA]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="189" y="379" width="140" height="19" uuid="6963d477-0021-4d4c-bd91-e9d03a49374e"/>
+				<text><![CDATA[_____________________________]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="190" y="379" width="67" height="19" uuid="b8dc800d-5cff-44b8-9095-433f97c2a85d"/>
+				<textElement textAlignment="Center" verticalAlignment="Top"/>
+				<textFieldExpression><![CDATA[new DecimalFormat("##,###.###").format($F{SUELDO_BASICO}.doubleValue()).toString()]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="254" y="378" width="20" height="20" uuid="becccfe2-e158-436f-b92b-01647fdff29e"/>
+				<textElement textAlignment="Center" verticalAlignment="Justified"/>
+				<text><![CDATA[X]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="259" y="379" width="83" height="18" uuid="f9c100ee-951a-408a-821a-cdb586298600"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{DIAS_TRABAJADOS}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="255" y="390" width="20" height="20" uuid="244f2227-3852-4caa-9a67-47e7312302c3"/>
+				<textElement textAlignment="Center" verticalAlignment="Justified"/>
+				<text><![CDATA[360]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="329" y="380" width="20" height="20" uuid="6cbf4e56-4cb3-4a82-9edc-9c46b5ef6e66"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[=]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="345" y="381" width="81" height="18" uuid="2dbd59ab-31c4-4c22-a1d7-259d30efd71a"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[new DecimalFormat("##,###.###").format($F{PRIMA_SERVICIO}.doubleValue()).toString()]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="1" y="434" width="129" height="19" uuid="eedd8768-8f93-4ed6-80c8-d03faf1cba03"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[VACACIONES]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="190" y="434" width="140" height="19" uuid="bd558c11-454d-4759-9de1-73ccbf21da76"/>
+				<text><![CDATA[_____________________________]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="191" y="434" width="67" height="19" uuid="b0210f32-a2a1-4542-a1bc-d96587440871"/>
+				<textElement textAlignment="Center" verticalAlignment="Top"/>
+				<textFieldExpression><![CDATA[new DecimalFormat("##,###.###").format($F{VACACIONES}.doubleValue()).toString()]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="255" y="433" width="20" height="20" uuid="fe9bac28-f25d-4c39-892b-6800a11ab22d"/>
+				<textElement textAlignment="Center" verticalAlignment="Justified"/>
+				<text><![CDATA[X]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="260" y="434" width="83" height="18" uuid="6620690f-d4c1-46c9-b890-fa6a150c276b"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{DIAS_TRABAJADOS}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="256" y="445" width="20" height="20" uuid="3b0def92-92ff-4c39-8cbb-a481e4ada0a2"/>
+				<textElement textAlignment="Center" verticalAlignment="Justified"/>
+				<text><![CDATA[360]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="330" y="435" width="20" height="20" uuid="66037b8b-ddce-40d3-b253-1d1acf6c034d"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[=]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="346" y="436" width="81" height="18" uuid="0b390f72-de0d-45bc-9542-57d0cf2cf799"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[new DecimalFormat("##,###.###").format($F{VACACIONES}.doubleValue()).toString()]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="171" y="537" width="129" height="19" uuid="d198d2e8-533a-40d7-9f95-3a7150659635"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[TOTAL LIQUIDACION]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="347" y="537" width="81" height="18" uuid="96686b4b-fdd3-4ada-a588-3a1e3bc393b9"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[new DecimalFormat("##,###.###").format($F{VALOR_LIQUIDACION}.doubleValue()).toString()]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="348" y="539" width="20" height="20" uuid="6ee5782f-3f63-4ce9-bc55-67b85a34f3d5"/>
+				<text><![CDATA[$]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="3" y="489" width="129" height="19" uuid="c69031e2-bd55-49d6-b47d-6e719b0b0aef"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[BONIFICACION]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="350" y="489" width="81" height="18" uuid="70ad69f6-7465-4d80-9e43-0755f3f7c33b"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[new DecimalFormat("##,###.###").format($F{BONIFICACION}.doubleValue()).toString()]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>

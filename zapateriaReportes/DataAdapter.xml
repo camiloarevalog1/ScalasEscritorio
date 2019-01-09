@@ -1,0 +1,2 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<jdbcDataAdapter class="net.sf.jasperreports.data.jdbc.JdbcDataAdapterImpl"><name>New Data Adapter 1</name><driver>org.h2.Driver</driver><username>root</username><password>12345</password><savePassword>true</savePassword><url>jdbc:h2:file:USER\DELL\Documents\bicktbucket\zapateria\db\zapateria</url><database></database><serverAddress></serverAddress></jdbcDataAdapter>
